@@ -1,0 +1,28 @@
+data_sources:
+  csv_files:
+    format: "csv"
+    expected_schema: "standard_v1"
+    validation_enabled: true
+  json_files:
+    format: "json"
+    expected_schema: "nested_v2"
+    validation_enabled: true
+  database_tables:
+    format: "sql"
+    expected_schema: "relational_v1"
+    validation_enabled: true
+  api_endpoints:
+    format: "json_stream"
+    expected_schema: "api_v3"
+    validation_enabled: true
+
+validation_rules:
+  strict_mode: true
+  auto_correction: false
+
+transformation_pipelines:
+  parallel_processing: true
+
+quality_metrics:
+  threshold_score: 95
+  anomaly_detection: true
